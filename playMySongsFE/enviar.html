@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Play My Songs - Envie suas músicas</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos/enviar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    <div class="container">
+        <div class="cabecalho">
+            <h1>ENVIAR MÚSICAS</h1>
+            <h2>Você pode enviar suas músicas aqui!</h2>
+        </div>
+        <div>
+            <form method="POST" enctype="multipart/form-data" id="fform">
+                <div>
+                    <label class="upload" for="file"><i class="fa-solid fa-upload"></i>Escolher Música</label>
+                    <input type="file" name="file" id="file"/><br>
+                    <div id="nomearquivo">Nenhum arquivo selecionado.</div>
+                    <div id="tam"></div>
+                </div>
+                <div>
+                    <label class="ltexto" for="titulo">Nome da Música:</label>
+                    <input class="entrada" type="text" id="titulo" name="titulo"/>
+                </div>
+                <div>
+                    <label class="ltexto" for="artista">Artista:</label>
+                    <input class="entrada" type="text" id="artista" name="artista"/>
+                </div>
+                <div>
+                    <label class="ltexto" for="estilo">Gênero:</label>
+                    <select name="estilo" id="estilo">
+                        <option value="rock">Rock</option>
+                        <option value="classica">Clássica</option>
+                        <option value="mpb">MPB</option>
+                        <option value="latina">Latina</option>
+                        <option value="popnacional">Pop Nacional</option>
+                        <option value="popinternacional">Pop Internacional</option>
+                        <option value="sertanejo">Sertanejo</option>
+                        <option value="samba">Samba</option>
+                        <option value="reggae">Reggae</option>
+                    </select>
+                </div>
+            </form>
+            <button class="botao" onclick="validarEnvio()">Enviar Música</button>
+            <div id="mensagem">
+            </div>
+        </div>
+        <a href="index.html">
+            <button type="submit" class="botao">Voltar</button>
+        </a>
+    </div>
+</body>
+<script src="javaScript/enviar.js"></script>
+</html>

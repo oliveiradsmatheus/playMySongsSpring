@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Play My Songs - Meu Web Player</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=headphones"/>
+</head>
+<body onload="buscarMusicas()">
+    <header>
+        <div class="nomepag">
+            <span class="material-symbols-outlined">
+                headphones
+            </span>
+            <h1 class="titulo">Play My Songs</h1>
+        </div>
+    </header>
+    <div class="pagina">
+        <div class="container">
+            <div class="ancora">
+                <a href="enviar.html">
+                    <button>Você pode enviar suas músicas aqui</button>
+                </a>
+            </div>
+            <div class="busca">
+                <form onsubmit="buscarMusicas()" action="index.html" method="get">
+                    <label for="busca"></label>
+                    <input placeholder="Você pode procurar suas músicas favoritas aqui!" id="busca" type="search"
+                           name="busca">
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+            <div class="player">
+                <p class="mdisp">Músicas disponíveis:</p>
+                <div class="musicas" id="listaMusicas">
+                    <div id="resultado">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="javaScript/index.js"></script>
+</html>

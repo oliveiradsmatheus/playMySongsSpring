@@ -1,0 +1,196 @@
+:root {
+    --preto: #282A36;
+    --preto-translucido: rgba(40, 42, 54, 0.3);
+    --branco: #F8F8F2;
+    --branco-translucido: rgba(248, 248, 242, 0.3);
+    --roxo: #603D8E;
+    --roxo-translucido: rgba(96, 61, 142, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--branco);
+}
+
+.container {
+    width: 450px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--branco-translucido);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px var(--roxo-translucido);
+    color: var(--preto);
+    border-radius: 10px;
+    padding: 50px 40px;
+}
+
+.cabecalho {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.container h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-align: center;
+    color: var(--roxo);
+}
+
+.container h2 {
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+}
+
+.container p {
+    font-size: 19px;
+    text-align: left;
+    margin-left: 12px;
+}
+
+#nomearquivo {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left: 12px;
+}
+
+#tam {
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-left: 12px;
+}
+
+.container input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    color: var(--preto);
+}
+
+select:in-range {
+    background: red;
+}
+
+.entrada {
+    padding: 20px 45px 20px 20px;
+    border: 2px solid var(--preto-translucido);
+    border-radius: 40px;
+}
+
+input::placeholder {
+    color: var(--preto);
+}
+
+i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.botao {
+    width: 100%;
+    height: 45px;
+    background: var(--preto);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px var(--roxo-translucido);
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--branco);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.container .botao:hover {
+    transition: all 0.5s ease;
+    background: var(--roxo);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload {
+    display: inline-block;
+    padding: 12px;
+    width: 100%;
+    color: var(--branco);
+    background: var(--preto);
+    text-align: center;
+    user-select: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px var(--roxo-translucido);
+    cursor: pointer;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.upload i {
+    position: relative;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.upload:hover {
+    transition: all 0.5s ease;
+    transform: scale(0.9);
+    background: var(--roxo);
+}
+
+.botao a {
+    text-decoration: none;
+    color: var(--branco);
+}
+
+label {
+    display: flex;
+    font-size: 18px;
+}
+
+.ltexto {
+    margin-top: 15px;
+}
+
+select {
+    width: 210px;
+    height: 40px;
+    margin: 12px 0;
+    padding-left: 15px;
+    border-radius: 40px;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    color: var(--preto);
+}
+
+select:active {
+    background-color: var(--branco);
+}
+
+#mensagem {
+    margin: 10px;
+}
