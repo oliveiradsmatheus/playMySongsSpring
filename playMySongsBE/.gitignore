@@ -19,6 +19,9 @@ target/
 *.iml
 *.ipr
 
+### Músicas ###
+*.mp3
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

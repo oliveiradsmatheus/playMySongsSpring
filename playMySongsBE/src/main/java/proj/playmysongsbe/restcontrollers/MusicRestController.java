@@ -26,22 +26,25 @@ public class MusicRestController {
                                              @RequestParam("artista") String artista,
                                              @RequestParam("estilo") String estilo) {
         String nomeArq;
-        try {
-            titulo = titulo.replaceAll(" ", "");
-            artista = artista.replaceAll(" ", "");
-            estilo = estilo.replaceAll(" ", "");
-            nomeArq = titulo + "_" + estilo + "_" + artista + ".mp3";
-            // Cria uma pasta na área estática para acomodar os arquivos recebidos, caso não exista.
-            File pastaUpload = new File(PASTA_UPLOAD);
-            if (!pastaUpload.exists())
-                pastaUpload.mkdir();
-            // Criar um nome para o arquivo com a regra da atividade.
-            // Utilizar o nome no lugar do nome original.
-            file.transferTo(new File(pastaUpload.getAbsolutePath() + "/" + nomeArq));
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(new Erro("Erro ao armazenar o arquivo. " + e.getMessage()));
-        }
-        return ResponseEntity.ok(new Musica(titulo, artista, estilo, nomeArq));
+        if(!file.isEmpty()) {
+            try {
+                titulo = titulo.replaceAll(" ", "");
+                artista = artista.replaceAll(" ", "");
+                estilo = estilo.replaceAll(" ", "");
+                nomeArq = titulo + "_" + estilo + "_" + artista + ".mp3";
+                // Cria uma pasta na área estática para acomodar os arquivos recebidos, caso não exista.
+                File pastaUpload = new File(PASTA_UPLOAD);
+                if (!pastaUpload.exists())
+                    pastaUpload.mkdir();
+                // Criar um nome para o arquivo com a regra da atividade.
+                // Utilizar o nome no lugar do nome original.
+                file.transferTo(new File(pastaUpload.getAbsolutePath() + "/" + nomeArq));
+            } catch (Exception e) {
+                return ResponseEntity.badRequest().body(new Erro("Erro ao armazenar o arquivo. " + e.getMessage()));
+            }
+            return ResponseEntity.ok(new Musica(titulo, artista, estilo, nomeArq));
+        } else
+            return ResponseEntity.badRequest().body(new Erro("Nenhum arquivo enviado."));
     }
 
     @GetMapping(value = "retornar_musicas")
